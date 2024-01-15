@@ -1,0 +1,11 @@
+Resources:
+  DynamoDBPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - dynamodb:PutItem
+            Resource: arn:aws:dynamodb:us-east-1:108912467164:table/employee-restore-status

@@ -1,0 +1,15 @@
+Resources:
+  BasicRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::108912467164:policy/RegisterNewEmployeeLambdaCloudWatch-CloudWatchPolicy-zcpX8xBBuwsl
+        - arn:aws:iam::108912467164:policy/DynamoDB-DynamoDBPolicy-4exIcerMKZxW
+        - arn:aws:iam::108912467164:policy/S3StartRecoverEmployee-S3WritePolicy-tBh47OuIYYDj

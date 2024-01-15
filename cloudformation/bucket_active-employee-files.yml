@@ -1,0 +1,6 @@
+Resources:
+  # Bucket de S3
+  ActiveEmployeeFilesBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: active-employee-files

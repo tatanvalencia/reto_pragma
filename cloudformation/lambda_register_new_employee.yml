@@ -1,0 +1,13 @@
+Resources:
+  # Función de Lambda
+  RegisterNewEmployeeLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: register-new-employee
+      Role: arn:aws:iam::108912467164:role/LambdaRegisterNewEmployee-BasicRole-qj0GU0AF8i17
+      Handler: index.handler
+      Runtime: nodejs16.x
+      Code:
+        S3Bucket: compumundo-lambda-code
+        S3Key: register-new-employee.zip
+      Timeout: 29

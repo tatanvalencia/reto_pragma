@@ -1,0 +1,6 @@
+Resources:
+  # Bucket de S3
+  LambdaCodeBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: compumundo-lambda-code

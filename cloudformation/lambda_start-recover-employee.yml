@@ -1,0 +1,13 @@
+Resources:
+  # Función de Lambda
+  StartRecoverEmployeeLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: start-recover-employee
+      Role: arn:aws:iam::108912467164:role/LambdaStartRecoverEmployeeRole-BasicRole-5HOWefhxL8Y0
+      Handler: index.handler
+      Runtime: nodejs16.x
+      Code:
+        S3Bucket: compumundo-lambda-code
+        S3Key: start-recover-employee.zip
+      Timeout: 29

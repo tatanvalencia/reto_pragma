@@ -1,0 +1,13 @@
+Resources:
+  # Función de Lambda
+  DisableEmployeeLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: disable-employee
+      Role: arn:aws:iam::108912467164:role/LambdaRoleInactiveEmployeeFiles-BasicRole-cyEzXnMUfZ40
+      Handler: index.handler
+      Runtime: nodejs16.x
+      Code:
+        S3Bucket: compumundo-lambda-code
+        S3Key: disable-employee.zip
+      Timeout: 29

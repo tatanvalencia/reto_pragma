@@ -1,0 +1,11 @@
+Resources:
+  S3WritePolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:PutObject
+            Resource: arn:aws:s3:::active-employee-files/*

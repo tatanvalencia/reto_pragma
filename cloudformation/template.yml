@@ -1,0 +1,27 @@
+Resources:
+  # Función de Lambda
+  RegisterNewEmployeeFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: register-new-employee-code
+        S3Key: register-new-employee.zip
+      Handler: index.handler
+      Runtime: nodejs14.x
+      Role: arn:aws:iam::123456789012:role/lambda_basic_execution
+      Timeout: 300
+
+  # Notificación de eventos
+  RegisterNewEmployeeEventPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: RegisterNewEmployeeFunction
+      Principal: events.amazonaws.com
+      SourceArn: arn:aws:events:us-east-1:123456789012:rule/register-new-employee
+
+  # Bucket de S3
+  ActiveEmployeeFilesBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: active-employee-files

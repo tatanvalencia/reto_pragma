@@ -1,0 +1,12 @@
+Resources:
+  # Bucket de Glacier
+  InactiveEmployeeFilesBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: inactive-employee-files
+      LifecycleConfiguration:
+        Rules:
+          - Id: ExpirationRule
+            Prefix: ""
+            Status: Enabled
+            ExpirationInDays: 3650
